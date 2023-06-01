@@ -1,0 +1,135 @@
+{% load static %}
+<aside class="navbar-aside" id="offcanvas_aside">
+
+    <div class="aside-top" style='height: 90px;'>
+        {% comment %} <a href="index.html" class="brand-wrap">
+        </a> {% endcomment %}
+        <img src="{%static 'admin_temp/assets/imgs/theme/sutlogo2.png' %}" class="logo" alt="Swarup" />
+        <div>
+            <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i></button>
+        </div>
+    </div>
+
+    <nav>
+        <ul class="menu-aside">
+            <li  {% block activate %} class="menu-item" {% endblock activate %}>
+                {% comment %} <a class="menu-link" href="{% url 'homeT' %}">
+                    <i class=></i>
+                    <span class="text">Swarup-Admin</span>
+                </a> {% endcomment %}
+            </li>
+            <li class="menu-item has-submenu">
+                <a class="menu-link" href="">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="text ms-3"  >Home</span>
+                </a>
+                <div class="submenu">
+                    {% comment %} <a href="{% url 'homeI' %}">Image</a> {% endcomment %}
+                    <a href="{% url 'homeT' %}">Content</a>
+                    <a href="{% url 'homeI' %}">Slider Image</a>
+                    
+                </div>
+            </li><br>
+            <a class="menu-link" href="{% url 'AbouT' %}">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <span class="text ms-3">About-Us</span>
+            </a>
+            </li><br>
+            <li class="menu-item has-submenu">
+                <a class="menu-link" href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                  </svg>
+                    <span class="text ms-3"  >Product</span>
+                </a>
+            </a>
+            <div class="submenu">
+                {% comment %} <a href="{% url 'homeI' %}">Image</a> {% endcomment %}
+                <a href="{% url 'peanuT' %}">Peanut</a>
+                <a href="{% url 'chickT' %}">Chickpeas</a>
+                <a href="{% url 'producT' %}">Product</a>
+
+                
+            </div>
+    
+            </li><br>
+            {% comment %} <li class="menu-item has-submenu"> {% endcomment %}
+                {% comment %} <a class="menu-link" href="{% url 'peanuT' %}">
+                <i class="fa-solid fa-peanut fa-beat"></i>
+                <span class="text">Peanuts</span>
+            </a>
+                
+            </li>
+            
+            <a class="menu-link" href="{% url 'chickT' %}">
+                <i class="fa-solid fa-peanut"></i>
+                <span class="text ms-3">Chickpeas</span>
+            </a>
+            </li> {% endcomment %}
+            <a class="menu-link" href="{% url 'contactT' %}">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span class="text ms-3">Contact-Us</span>
+            </a>
+            </li>
+            
+            
+            {% comment %} <li class="menu-item has-submenu"> {% endcomment %}
+                {% comment %} <a class="menu-link" href="page-transactions-1.html">
+                    <i class="icon material-icons md-monetization_on"></i>
+                    <span class="text">Transactions</span>
+                </a>
+                <div class="submenu">
+                    <a href="page-transactions-1.html">Transaction 1</a>
+                    <a href="page-transactions-2.html">Transaction 2</a>
+                </div>
+            </li>
+            <li class="menu-item has-submenu">
+                <a class="menu-link" href="#">
+                    <i class="icon material-icons md-person"></i>
+                    <span class="text">Account</span>
+                </a>
+                <div class="submenu">
+                    <a href="page-account-login.html">User login</a>
+                    <a href="page-account-register.html">User registration</a>
+                    <a href="page-error-404.html">Error 404</a>
+                </div>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="page-reviews.html">
+                    <i class="icon material-icons md-comment"></i>
+                    <span class="text">Reviews</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="page-brands.html"> <i class="icon material-icons md-stars"></i> <span class="text">Brands</span> </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" disabled href="#">
+                    <i class="icon material-icons md-pie_chart"></i>
+                    <span class="text">Statistics</span>
+                </a>
+            </li>
+        </ul>
+        <hr />
+        <ul class="menu-aside">
+            <li class="menu-item has-submenu">
+                <a class="menu-link" href="#">
+                    <i class="icon material-icons md-settings"></i>
+                    <span class="text">Settings</span>
+                </a>
+                <div class="submenu">
+                    <a href="page-settings-1.html">Setting sample 1</a>
+                    <a href="page-settings-2.html">Setting sample 2</a>
+                </div>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="page-blank.html">
+                    <i class="icon material-icons md-local_offer"></i>
+                    <span class="text"> Starter page </span>
+                </a>
+            </li> {% endcomment %}
+        </ul>
+        <br />
+        <br />
+    </nav>
+</aside>
+

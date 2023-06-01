@@ -1,0 +1,69 @@
+{%include 'client_temp/Header.html'%}
+{%load static%}
+   {%for g in demo  %}   
+ <div class="page-title-area pt-50 pb-50" style="background-image:url({{g.image.url}})">
+    {%endfor%}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-title text-center mb-20">
+                    <h3 style="font-size: 26px;">About Product</h3>
+                    <img src="img/icon/line.png" alt="">
+                </div>
+                <!-- <div class="breadcrum-list">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item">
+                                <a href="index-2.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">About SaltedPeanuts</li>
+                        </ol>
+                    </nav>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+     <main class="page-content" >
+
+           
+           <div class="brook-about-area pattern-1 ptb--120 ptb-md--80 ptb-sm--60 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 ">
+                            <div class="about-inner authenthick-about mt_md--40 mt_sm--40"style="margin-left: 80px;">
+                                
+                                {% comment %} <h3 class="heading heading-h3 line-height-1-25 about-title">Procurement :  &nbsp;</h3>
+                                <div class="bkseparator--40"></div>
+                                <div class="title-separator w--100 color-red"></div>
+                                <div class="bkseparator--40"></div>
+                                
+                                <p class="bk_pra mt-30 fw-400 text-justify">We have a successful network and team with the help of which we can get good quality peanuts and chickpea from farmers in Saurashtra, Saurashtra is considered the best region for peanuts cultivation. We follow a strict policy to procure quality crops for processing after conducting several tests and then we buy.</p>
+                                {% endcomment %}
+
+                                 {%for i in sub%}
+                                 {%if i.Title == 'title'%}
+                                 <h3 class="heading blo-title">{{ i.text|safe }}</h3>
+                                 {% else %}
+                                    <p class="bk_pra mt-30 fw-400 text-justify">{{ i.text|safe }}</p>
+                                 {%endif%}
+                                 {%endfor%}
+
+                                 {% comment %} {%for j in Text%} 
+                                {%endfor%} {% endcomment %}
+                                {% comment %} <p class="bk_pra mt-30 fw-400 text-justify">We test the best quality peanuts from the market and then buy them. First it is soaked in salt water. It is then properly soaked in salt water, then covered so that salty water is completely absorbed in peanuts. It is then properly baked in our oven at the right temperature to give it the perfect crunch. Thus salted peanuts are ready.</p>
+                                <p class="bk_pra mt-30 fw-400 text-justify">The raw peanuts selected inside the house are completely dry roasted, also, the sorted groundnuts are roasted at Machine temperature for a fixed time to ensure uniform roasting and delicious taste.</p>
+                                <p class="bk_pra mt-30 fw-400 text-justify">Then after the hand-pick roasted peanuts are then sealed in the SwarupGruhUdhyog.</p> {% endcomment %}
+                                 
+                                {% comment %} <h3 class="blo-title">Processing of roasted chana</h3>  {% endcomment %}
+                               {% comment %} <p class="bk_pra mt-30 fw-400 text-justify">First of all the right and best raw gram is selected from the market after proper testing. We also have machinery for roasting chickpeas. It is then steeped overnight in turmeric and salt water, then it is laid in the boiler.</p>
+                               <p class="bk_pra mt-30 fw-400 text-justify">After soaking in water overnight, it is baked in a furnace in the right amount at the right temperature, thus roasted chana is ready.</p>
+                               <p class="bk_pra mt-30 fw-400 text-justify">There are many varieties of roasted chana, we have made roasted chana with turmeric chana.</p>  
+                             </p>    {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{%include 'client_temp/footer.html'%}
+

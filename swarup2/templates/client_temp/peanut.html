@@ -1,0 +1,119 @@
+   {%include 'client_temp/Header.html'%}
+   {%load static%}
+   
+<style>
+    .best-ins-list li {
+        width: 100%;
+    }
+</style>
+
+<!-- page title start -->
+{%for j in results %}
+<div class="page-title-area pt-50 pb-50"style="background-image:url({{j.image.url}})">
+    {%endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-title text-center mb-20">
+                    <h3 style="font-size: 22px;margin-left: 73px;">About SALTED PEANUTS</h3>
+                    <img src="img/icon/line.png" alt="">
+                </div>
+                <div class="breadcrum-list">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">About Peanuts</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page title end -->
+
+<!-- portfolio-area start -->
+ <main class="page-content" >
+
+           
+            <div class="brook-about-area pattern-1 ptb--90 ptb-md--50 ptb-sm--60 " >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 "style="padding-right: 15px; padding-left: 15px;">
+                            <div class="about-inner authenthick-about mt_md--40 mt_sm--40">
+                                
+                                
+                                {% comment %} <table style="width:100%">
+                                    <tr>
+                                      <th></th>
+                                      <th></th>
+                                    </tr>
+                                    <tr>
+                                    <td scope="col"class='w-100'>{% for i in data%}
+                                    <p class="bk_pra mt-30 fw-400 text-justify">{{ i.text|safe }}</p>
+                                {%endfor%}</td>
+                                <td>
+                                <img style="height: 310px; width: 247px;  margin-left: 239px"src="{%static "client_temp/img/peanut.png" %}" alt="" ></td>
+                                </tr>
+                            </table> {% endcomment %}
+
+                            <style>
+                                .linux-details {
+              
+                                  width: 120%;
+                                  
+                                  padding: 0px;
+                                  
+                                  }
+                                  .linux-img {
+              
+                                    height: 100px;
+                                    
+                                    width: 150px;
+                                    
+                                    margin-left: 80%;
+                                    
+                                    float: right;
+                                    
+                                    }
+                             
+                                  {% comment %} padding-left: 20px; {% endcomment %}
+                                  </style>
+                              <div class='linux-details'>
+              
+                                <div>
+                                
+                                <img style="height: 320px; width: 265px; margin-left: 35px"src="{%static "client_temp/img/peanut.png" %}" alt=""  class='linux-img'>
+                                
+                                </div>
+                                
+                                <div class="text" style="padding-left:45px" >
+                                
+                               
+                                
+                                    {% for i in data%}
+                                  <p class="bk_pra mt-30 fw-400 text-justify">{{ i.text|safe }}</p>
+                                  {%endfor%}
+                                
+                                </div>
+                                
+                                </div>
+                                    {% comment %} <p class="bk_pra mt-30 fw-400 text-justify ">Also in the peanuts of SwarupGruhUdyog, we pay special attention to everything from the purchase of peanuts to their taste. In it, we do all the tests on the quality of peanuts and then buy them. We chose groundnut as we prefer traditional food and it also has lots of benefits, which are as follows:</p>
+
+                                
+                               <p  class="bk_pra mt-30 fw-400 text-justify ">Many people believe that peanuts do not compare as much as cashews, almonds, pistachios, and walnuts which means it doesn't have as many nutrients as all of these, but in fact, peanuts are high in nutrients. Although peanuts are not as expensive as almonds and walnuts, they have the same nutrients as almonds and walnuts. Peanuts grow underground and have leaf are in the outer part of the land.</p>
+                               <p  class="bk_pra mt-30 fw-400 text-justify ">Peanuts help to live a long life. Walnuts and almonds are considered to be the main ones for keeping the heart healthy, while even peanuts prevent heart disease by reducing cholesterol levels and can also prevent small blood clots so It reducing the risk of heart disease or heart attack.Peanuts are the second largest source of protein after almonds when it comes to protein. Weight can be significantly reduced with the help of peanuts.Peanuts are low-glycemic so they do not raise blood sugar in the body due to which the risk of developing diabetes decreases.Peanuts are also a great source of fiber which can help reduce inflammation in your body and it also helps in improving the digestive system. Eating peanut or peanut butter in the morning can help control your blood sugar throughout the day.</p>
+                               
+                               <p  class="bk_pra mt-30 fw-400 text-justify ">Regular consumption of peanuts has been shown to reduce the risk of certain types of cancer and older people who eat peanut butter can also help reduce their risk of stomach cancer.30 grams of peanuts provide you with 8 grams of protein which is more than any other food thus, peanuts provide the same benefits as almonds.Consuming peanuts in large quantities also helps in the gall bladder. Peanuts can also help in overcoming malnutrition.</p>
+                               
+                               <p  class="bk_pra mt-30 fw-400 text-justify ">Peanuts are also beneficial for skin and hair, its consumption can make your skin clean and clear because it contains healthy monounsaturated and resveratrol fats that also help to flush out pimples and toxic elements. Due to antioxidants like vitamins A and C in peanuts, fine lines, wrinkles, and dark spots are removed from your skin. Apart from that, peanuts prevent early signs of aging while making your skin healthy and smooth. Consuming peanuts daily hydrates and moisturizes your skin. Peanuts also help in curing common skin diseases like psoriasis and eczema. Apart from that, since it is rich in vitamin C, it helps in the increased production of collagen in the body and prevents hair loss, Thus, peanuts are very useful for skin and hair and other skin problems.</p>
+                               <p  class="bk_pra mt-30 fw-400 text-justify ">Peanuts are high in fat, protein, fiber, potassium, phosphorus, magnesium, vitamins, and calories. You may be wondering how fat can help you lose weight, so peanuts have fat which is known as "good fat".</p>
+                               <p  class="bk_pra mt-30 fw-400 text-justify ">There is a myth about peanuts that peanuts contain fat. Yes, peanuts contain fat but it is unsaturated and healthy. The fat in peanuts helps keep your blood vessels flexible. Thus, peanuts have many benefits.There are many forms of peanuts like Roasted, Salted, Chocolate-coated, Peanut butter, etc... Apart from that peanuts come in wide varieties like Red skin peanuts, Roasted unsalted peanuts, Dry roasted peanuts, Salted caramelized peanuts, Honey chili peanuts, Caramelized cocoa dusted peanuts, Chili peanuts crackers, Roasted salted red skin peanuts, Belgian chocolate peanuts, Dark chocolate peanuts, Milk chocolate peanuts cluster. You can eat peanuts in many ways, like adding them to salad and soups, spreading peanut butter on sandwiches or toast, in desserts like cookies and brownies, in making protein shakes, etc...</p>
+                               
+                               <p  class="bk_pra mt-30 fw-400 text-justify ">First, mix some salt in the water, soak peanuts in salted water, and mix well. Then cover it so that the salty water gets well absorbed into the peanuts, then strain it. We then put it in the furnace to bake at the right temperature thus, salted peanuts are ready.So would you eat salted peanuts of the Swarup's? Really Swarup's peanuts are both healthy and tasty.</p>
+                     {% endcomment %}
+</div></div></div></div></div></main>
+
+{%include 'client_temp/footer.html'%}

@@ -1,0 +1,219 @@
+{%load static%} {% include 'client_temp/Header.html' %}
+<style>
+  .best-ins-list li {
+    width: 100%;
+  }
+  svg, img1 {
+    max-width: 100%;
+    height: 350px;
+    width: 300px;
+}
+</style>
+
+<!-- page title start -->
+{%for k in results %}
+<div class="page-title-area pt-50 pb-50" style="background-image: url({{k.image.url}})">
+  {%endfor%} 
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="page-title text-center mb-20">
+          <h3 style="font-size: 22px; margin-left: 73px">About CHICKPEAS</h3>
+          <img src="img/icon/line.png" alt="" />
+        </div>
+        <div class="breadcrum-list">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                About chickpeas
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% comment %} <img class src="{%static "client_temp/img/peanut.png" %}" alt="Trulli" height="400px" width="6  00px"> {% endcomment %}
+
+<!-- page title end -->
+<!-- portfolio-area start -->
+<main class="page-content">
+  <div class="brook-about-area pattern-1 ptb--90 ptb-md--80 ptb-sm--60">
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-lg-12 col-md-12"
+          style="padding-right: 15px; padding-left: 15px"
+        >
+          <div class="about-inner authenthick-about mt_md--40 mt_sm--40">
+            {% comment %} <h3 class="heading heading-h3 line-height-1-25 about-title">
+              Only Swarup's Roasted Chana: &nbsp;<strong class="theme-color1"
+                >Healthy and Tasty</strong
+              > {% endcomment %}
+            </h3>
+            {% comment %} <div class="bkseparator--40"></div> {% endcomment %}
+            {% comment %} <div class="title-separator w--100 color-red"></div> {% endcomment %}
+            {% comment %} <div class="bkseparator--40"></div> {% endcomment %}
+            
+            {% comment %} {% for i in result%}
+                  <p class="bk_pra mt-30 fw-400 text-justify">{{ i.text|safe }}</p>
+                  {%endfor%} 
+                 
+                 <img style="height: 347px; width: 275px;  margin-left: 230px"src="{%static "client_temp/img/chick.png" %}" alt="" > {% endcomment %}
+                 <style>
+                  .linux-details {
+
+                    width: 120%;
+                    
+                    padding: 0px;
+                    
+                    }
+                    .linux-img {
+
+                      height: 100px;
+                      
+                      width: 150px;
+                      
+                      margin-left: 80%;
+                      
+                      float: right;
+                      
+                      }
+               
+                    {% comment %} padding-left: 20px; {% endcomment %}
+                    </style>
+                <div class='linux-details'>
+
+                  <div>
+                  
+                  <img style="height: 300px; width: 265px; margin-left: 35px"src="{%static "client_temp/img/chick.png" %}" alt=""  class='linux-img'>
+                  
+                  </div>
+                  
+                  <div class="text" style="padding-left:45px" >
+                  
+                 
+                  
+                    {% for i in result%}
+                    <p class="bk_pra mt-30 fw-400 text-justify">{{ i.text|safe }}</p>
+                    {%endfor%}
+                  
+                  </div>
+                  
+                  </div>
+            {% comment %} <p class="bk_pra mt-30 fw-400 text-justify">
+              There are mainly two types of chickpeas: Kabuli and Desi.
+            </p>
+
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Desi chickpea is mainly smaller and darker and has rougher coat,
+              whereas Kabuli chickpeas are large, light-colored, and smooth
+              coats. Chickpeas come in many colors like green, black, brown, and
+              red, with red chickpeas being the most popular. Chickpeas can be
+              bought both dry and ready, you can store dry chickpeas in it in an
+              airtight container in your kitchen in a cool and dark place for up
+              to twelve months, besides that, once the chickpeas are cooked, you
+              can store them in an airtight container in the refrigerator for up
+              to 3 days. You can make and eat chickpeas in the form of many
+              dishes like in a salad, soup, chana masala, as a quick snack,
+              etc... Kabuli chickpea is mainly white to light brown in color.
+              Desi chickpea is mainly brown in color. Chickpeas provide a rich
+              source of energy and protein to cattle in their diet, it is a
+              perennial chickpeas. Chickpeas are a nutrient-dense food. In many
+              areas of the world, the leaves of the native chickpea are eaten as
+              a cooked green vegetable and it is split in half so that it
+              becomes chana dal known as desi chana or yellow chana[chana dal].
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              The protein and fiber in chickpeas keep your appetite under
+              control and it can also help reduce your calorie intake at meals.
+              Research has found that people who eat chickpeas have a smaller
+              waist circumference than those who don't, it can help you maintain
+              a healthy weight.
+            </p>
+
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Chickpeas also have a very low glycemic index, it doesn't spike
+              your blood sugar, which means it lowers your risk of
+              diabetes.Eating chickpeas also improves your digestion. The fiber
+              it contains is soluble and mixes with water in the digestive tract
+              besides that soluble fiber inhibits the growth of unhealthy
+              bacteria in the gut and increases the number of healthy bacteria.
+            </p>
+
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Chickpeas are a good source of minerals like magnesium and
+              potassium due to this, it helps in high blood pressure and
+              prevents heart disease or heart attack.Since chickpeas contain
+              nutrients like vitamin A, vitamin C, vitamin B6, protein,
+              manganese, iron, and selenium, they can reduce inflammation in
+              your body that is, it fights against chronic inflammation.
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Jaundice can be removed due to chickpeas, consuming chickpeas
+              soaked in water along with jaggery water gives relief to lotus
+              fever.Apart from that, if chickpeas are consumed regularly,
+              certain types of cancer risk can also be reduced, as well it also
+              helps in preventing tumor growth. Hence many diseases like cancer,
+              diabetes, and heart disease can be prevented by eating chickpeas.
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Chickpeas contain many impressive nutrients that can support brain
+              function and mental health.Apart from that, it is a major source
+              of iron which helps prevent iron deficiency. The iron in it
+              increases the production of red blood cells and also helps in
+              physical growth, muscle metabolism, brain development, and other
+              health matters.
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Skin diseases can also be reduced with the help of chickpeas, it
+              reduces white spots, and fungal infections can be reduced. Black
+              chickpea contains vitamin B6 which can prevent hair fall, besides
+              that chickpea flour can remove dandruff and also prevents
+              premature graying of hair.If the black chickpea is soaked in water
+              for 8 hours, it becomes a little soft. Boiled in hot water till it
+              becomes completely soft is called boiled chickpea due to this,
+              immunity can be increased, physical strength can be increased and
+              problems caused by Pitta doshas can also be balanced.
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Thus, the numerous benefits of chickpeas help you in health in
+              many ways.
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              You can eat and enjoy chickpea in many ways, in it we make roasted
+              chana which is healthy as well as tasty, its recipe is as follows:
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              First of all, choose the right and best raw chickpeas selected
+              from the market after proper testing. Then let it soak overnight
+              in turmeric water and salty water and then put it in the
+              boiler.After soaking the chickpea in turmeric water and salty
+              water overnight, it water is completely absorbed in the chickpeas.
+              After soaking overnight, it is properly roasted in a furnace in
+              the right quantity. Thus, roasted chana is ready.
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify">
+              Thus, if you want to make a home-roasted chana, you should not put
+              it in the furnace you can roast chickpeas by adding salt to a
+              pan.When eating roasted chana, it is very fun to chew them. So
+              will you try Swarup's, Roasted Chana?
+            </p>
+            <p class="bk_pra mt-30 fw-400 text-justify"></p> {% endcomment %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{%include 'client_temp/footer.html'%}
+margin-left: 258px;
+    height: 350px;
+    width: 323px;
+    margin-top: 39px

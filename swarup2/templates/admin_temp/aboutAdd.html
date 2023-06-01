@@ -1,0 +1,18 @@
+{% extends 'admin_temp/base.html' %}
+
+{% load static %}
+
+{% block body  %}
+<body>
+    <form action="/abouttextadd/"  method="post">
+        <div align='center'>
+            {%csrf_token%}
+            {{form.media}}
+            {{form.as_p}}
+            <button type="button"  onclick="window.location='/AboutT/';" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            <button type="submit" class="btn btn-primary">Submit</button>  
+        </div>
+        
+      </form> 
+      {% endblock body  %}

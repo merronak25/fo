@@ -1,0 +1,54 @@
+{% load static %}
+
+<header class="main-header navbar">
+  <div class="col-search">
+    
+  </div>
+  <div class="col-nav">
+
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link btn-icon darkmode fa-3xl" href="#" title="Dark Mode">
+          <i class="material-icons md-nights_stay"></i>
+        </a>
+      </li>
+
+      {% comment %} <li class="dropdown nav-item">
+        <a
+          class="dropdown-toggle"
+          data-bs-toggle="dropdown"
+          href="#"
+          id="dropdownAccount"
+          aria-expanded="false" {% endcomment %}
+   
+          
+            {% comment %} <class="img-xs rounded-circle"> {% endcomment %}
+              <a href="/LogoutPage/" title="Logout" onclick="return confirm('Are You Sure, You want to Logout?');"><i class="fa-solid fa-right-from-bracket fa-xl"></i>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount" style="left: -120px;">
+          
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-danger" href="">
+          <a  href ="/LogoutPage/" title="Dark Mode" </i></a>>
+          
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="mt-0" style="background: #FFFFFF;">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert" id="success-alert">
+      <strong>Message: </strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  
+  {% endfor %}
+
+</div>
+<style>
+  .main-header {
+    padding-left: 65%;
+  }
+  </style>
+
+

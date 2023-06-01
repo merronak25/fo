@@ -1,0 +1,208 @@
+{% extends 'admin_temp/base.html' %}
+
+{% load static %}
+
+{% block body  %}
+<style>
+    .toggle-btn {
+      display: inline-block;
+      position: relative;
+      width: 60px;
+      height: 30px;
+    }
+    .toggle-input {
+      display: none;
+    }
+    .toggle-box {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ddd;
+      border-radius: 15px;
+      transition: background-color 0.2s;
+    }
+    .toggle-input:checked + .toggle-box {
+      background-color: #6ab04c;
+    }
+    .toggle-text {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      line-height: 30px;
+    }
+</style>
+
+
+                             <!---Table-->
+                             <style>
+                              .container {
+                                  padding: 2rem 0rem;
+                                }
+                                
+                                h4 {
+                                  margin: 2rem 0rem 1rem;
+                                }
+                                
+                                .table-image {
+                                  td, th {
+                                    vertical-align: middle;
+                                  }
+                                }
+                                th{
+                                  font-size:18px;
+                                }
+                                td{
+                                  font-size: 13px;
+                                }
+                            
+                                image.png
+                              </style>
+                            <div class="container">
+                              <div class="row">
+                              <div class="col-sm-8"><h3>Slider <b> Image </b></h3></div>
+                              <div class="col-sm-4 text-end" >
+                               
+                             
+                                  <a href='' class="btn btn-primary" data-bs-target="#exampleModal" data-bs-toggle="modal"> <i class="fa-solid fa-plus"></i> Add New</a>
+                            
+                              </div><br><br>
+                                <div class="col-13">
+                                  <table class="table table-bordered mt-3">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col" >Sno.</th>
+                                        {% comment %} <th scope="col" >Title.</th> {% endcomment %}
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Delete</th>
+                                        {% comment %} <th scope="col">Status</th> {% endcomment %}
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        
+                                      {% for z in results5 %} 
+                                      
+                                        <th scope="row">{{forloop.counter}}</th>
+                                        <td scope="row" class="w-10 h-10"> <img src="{{ z.image.url }}" class="card-img-top "  alt="category image"
+                                          style="height: 20%;
+                                          width: 20%;
+                                      }">
+                                          </td>
+                                          
+                                         <td scope="row" class="w-10 h-10"  style="height: 10%;
+                                         width: 25%;
+                                     }">{{z.Title}}</td> 
+                                        <td>
+                                          <a href="#imgupdModal-{{forloop.counter}}" data-toggle="modal" class="btn btn-success"><i class="fa-regular fa-pen-to-square"></i></a>
+                                        </td>
+                                        <td>
+                                          
+                                        <a href="/HomeImgdel/{{ z.id }}" onclick="return confirm('Are You Sure, You want to delete this data?');" class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
+                                        </td> 
+                                     
+                                        <td>
+                                          {% comment %} <div class="toggle-btn">
+                                            <a href="{% url 'toggle_image' pk=myimage.pk %}"input type="checkbox" class="toggle-input" {% if myimage.is_active %}checked{% endif %} >
+                                            <div class="toggle-box"></div>
+                                            <div class="toggle-text">{% if myimage.is_active %}Active{% else %}Inactive{% endif %}</div>
+                                          </div> {% endcomment %}
+                                          {% comment %} <form>
+                                          <input type="checkbox" checked data-toggle="toggle"  data-on="Enable" data-off="Disable" data-onstyle="success" data-offstyle="danger">
+                                          <form> {% endcomment %}
+                                        </td>
+                                      </tr>
+                                      {%endfor%}
+                                      
+                                     
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+
+  {% comment %} ################################################################################################################################################################# {% endcomment %}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="margin-top:100px">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><b>HOME</b></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+          <form action="/HomeImgadd/" method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+          <label for="inputAddress2" class="form-label" >Image Title</label>
+          <input type="text" name="text" id="text" required  ></input><br><br><br>
+           <div class w="10" ="img">
+             <label for="inputAddress2" class="form-label" >Images</label>
+                 <label ><input type="file" id="myFile" name="myFile" required></label>
+             </div><br>     
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save </button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  {% comment %} #######################################---img upd model---####################################################################### {% endcomment %}
+  
+  {% for w in results5 %}
+
+<!-- Modal -->
+<div class="modal fade" id="imgupdModal-{{forloop.counter}}" tabindex="-1" aria-labelledby="imgupdModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="imgupdModal">Modal title</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+          <form action="/Sliders/{{w.id}}" method="post" enctype="multipart/form-data"> 
+            {% csrf_token%}
+          <label for="inputAddress2" class="form-label" >Image Title</label>
+          <input type="text" name="text" id="text" value={{w.Title}} ></input><br><br><br>
+          <div class w=20>
+            <div class w="10" ="img">
+             <img src= "{{w.image.url}}" class="card-img-top " alt="category image" style=" width: 100%; position: sticky;top: 0; "><br><br>
+             <label for="inputAddress2" class="form-label" >Images</label>
+                 <label ><input type="file" id="myFile" name="myFile"></label>
+             </div><br>     
+        </div>
+        <div class="modal-footer">
+          <button type="danger" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          <button type="submit" class="btn btn-primary">Save </button>
+        </div>
+      </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<script>
+  function setimg(img){
+    document.getElementById("modalimg").src = img
+  }
+  function switchFunction(id, status){
+    window.location.href=`{{w.image.url}}/changeStatus/${w.id}`;
+  }
+  function updatefunction(id, categoryName){
+    document.getElementById("categoryname").value = categoryName;
+    document.getElementById("updateform").action = `${id}`;
+  }
+</script>
+
+{% endfor %}
+{% endblock body  %}

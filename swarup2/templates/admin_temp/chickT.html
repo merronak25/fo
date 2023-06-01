@@ -1,0 +1,369 @@
+{% extends 'admin_temp/base.html' %}
+
+{% load static %}
+
+{% block body  %}
+
+
+
+                             <!---Table-->
+
+<style>
+    .container {
+        padding: 2rem 0rem;
+      }
+      
+      h4 {
+        margin: 2rem 0rem 1rem;
+      }
+      
+      .table-image {
+        td, th {
+          vertical-align: middle;
+        }
+      }
+      th{
+        font-size:18px;
+      }
+      td{
+        font-size: 13px;
+      }
+
+     
+      
+    </style>
+<div class="container">   
+    <div class="row">
+    <div class="col-sm-8"><h3>Chickpeas <b>Content</b></h3></div>
+    <div class="col-sm-4 text-end" >
+    
+        <a href='' class="btn btn-primary" data-toggle="modal" data-target="#addModel"> <i class="fa-solid fa-plus"></i> Add New</a>
+        
+    </div><br><br>
+      <div class="col-13">
+        <table class="table table-bordered mt-3">
+          <thead>
+            <tr>
+              <th scope="col" >Sno.</th>
+              <th scope="col"class='w-100'>Content</th>
+              <th scope="col" class='w-40'>Title</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            {% for i in result4 %} 
+            
+              <th scope="row">{{ forloop.counter }}</th>
+              {% comment %} <td><textarea cols= "150" rows= "4"style="border:none;" readonly>{{a.text}}</textarea></td> {% endcomment %}
+              <td>{{ i.text|safe }} </td>
+              <td scope="row" cols= "50" rows= "50" >{{i.Title}}</td> 
+              <td>
+                <a href="#updModel-{{forloop.counter}}" class="btn btn-success" data-toggle="modal"   class="btn btn-success"><i class="fa-regular fa-pen-to-square"></i></a>
+              </td>
+              <td>
+                
+              <a href="/chicktextdel/{{ i.id }}" onclick="return confirm('Are You Sure, You want to delete this data?');" class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
+              </td>
+            </tr>
+            {%endfor%}
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ {% comment %} ######################################---CK editor---######################################################################################## {% endcomment %} 
+ 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <!-- Load CKEditor JS -->
+ <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+ <style>
+     /* CSS to customize modal size */
+     
+     .modal-lg {
+         max-width: 90%;
+     }
+     .form-label {
+       font-size: 18px;
+   }
+ </style>
+
+
+<body>
+
+ <!-- Button to trigger modal -->
+ {% comment %} <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</button> {% endcomment %}
+
+ <!-- Modal -->
+ <div class="modal fade" id="addModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h4 class="modal-title" id="myModalLabel"><b>Chickpeas</b></h4>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                 
+             </div>
+             <div class="modal-body">
+                 <form method="post" action = "/chicktextadd/" enctype="multipart/form-data">
+                  {% csrf_token %}
+                 
+                   
+                   <div class w="10" ="img">
+                     <label for="inputAddress2" class="form-label" > Content Title: </label>
+                         <label ><input type="text" id="text" name="text" required></label>
+                     </div><br>
+                     <label for="inputAddress2" class="form-label" >Description:</label>
+                     <textarea name="editor" id="editor"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+                      <button type="submit" class="btn btn-primary">Submit</button> 
+                    </form>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <!-- Initialize CKEditor -->
+ <script>
+     CKEDITOR.replace('editor', {
+         toolbar: 'full',
+         height: '400',
+         width: '100%',
+         allowedContent: true
+     });
+ </script>
+
+ <!-- Load Bootstrap JS (jQuery and Bootstrap JS must be loaded after CKEditor JS) -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+{% comment %} #######################################---Image add <table>----################################################################### {% endcomment %}
+<style>
+  .container {
+      padding: 2rem 0rem;
+    }
+    
+    h4 {
+      margin: 2rem 0rem 1rem;
+    }
+    
+    .table-image {
+      td, th {
+        vertical-align: middle;
+      }
+    }
+    th{
+      font-size:18px;
+    }
+    td{
+      font-size: 13px;
+    }
+
+    
+  </style>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-8"><h3>Banner <b>Images</b></h3></div>
+  <div class="col-sm-4 text-end" >
+   
+ 
+      <a href='' class="btn btn-primary" data-bs-target="#exampleModal" data-bs-toggle="modal"> <i class="fa-solid fa-plus"></i> Add New</a>
+
+  </div><br><br>
+    <div class="col-13">
+      <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th scope="col" >Sno.</th>
+            {% comment %} <th scope="col" >Title.</th> {% endcomment %}
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+            {% comment %} <th scope="col">Status</th> {% endcomment %}
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+          {% for z in demo %} 
+          
+            <th scope="row">{{forloop.counter}}</th>
+            <td scope="row" class="w-10 h-10"> <img src="{{ z.image.url }}" class="card-img-top "  alt="category image"
+              style="height: 20%;
+              width: 20%;
+          }">
+              </td>
+              
+             <td scope="row" class="w-10 h-10"  style="height: 10%;
+             width: 25%;
+         }">{{z.Title}}</td> 
+            <td>
+              <a href="#imgupdModal-{{forloop.counter}}" class="btn btn-success" data-toggle="modal" ><i class="fa-regular fa-pen-to-square"></i></a>
+            </td>
+            <td>
+              
+            <a href="/chickImgdel/{{ z.id }}" onclick="return confirm('Are You Sure, You want to delete this data?');" class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
+            </td> 
+            {% comment %} <td>
+              <input type="checkbox" checked data-toggle="toggle" data-on="Enable" data-off="Disable" data-onstyle="success" data-offstyle="danger">
+            </td> {% endcomment %}
+          </tr>
+          {%endfor%}
+          
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% comment %} ###########################################--- update model---######################################################### {% endcomment %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <!-- Load CKEditor JS -->
+ <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+ <style>
+     /* CSS to customize modal size */
+     
+     .modal-lg {
+         max-width: 90%;
+     }
+     .form-label {
+       font-size: 18px;
+   }
+ </style>
+
+
+<body>
+
+ <!-- Button to trigger modal -->
+ {% comment %} <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</button> {% endcomment %}
+
+ <!-- Modal -->
+ {% for j in result4 %} 
+
+ <div class="modal fade" id="updModel-{{forloop.counter}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                 
+             </div>
+             <div class="modal-body">
+                 <form method="post" action = "/chickupdate/{{j.id}}" enctype="multipart/form-data">
+                  {% csrf_token %}
+                 
+                   
+                   <div class w="10" ="img">
+                     <label for="inputAddress2" class="form-label" >Content Title:</label>
+                        <input type="text" id="text" value= "{{j.Title}}" class="ms-1" name="text"></input>
+                     </div><br>
+                     <label for="inputAddress2" class="form-label" >Description:</label>
+                     <textarea name="editor1" id='editor1-{{forloop.counter}}'>{{j.text}}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+                      <button type="submit" class="btn btn-primary">Update</button> 
+                    </form>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <!-- Initialize CKEditor -->
+ <script>
+     CKEDITOR.replace('editor1-{{forloop.counter}}', {
+         toolbar: 'full',
+         height: '400',
+         width: '100%',
+         allowedContent: true
+     });
+ </script>
+{%endfor %}
+ <!-- Load Bootstrap JS (jQuery and Bootstrap JS must be loaded after CKEditor JS) -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+{% comment %} ############################################---img modal---############################################################ {% endcomment %}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="margin-top:100px">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Chickpeas</b></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form action="/chickImgadd/" method="post" enctype="multipart/form-data">
+          {% csrf_token%}
+        <label for="inputAddress2" class="form-label" >Image Title</label>
+        <input type="text" id="text" name="text" required></input><br><br><br>
+         <div class w="10" ="img">
+           <label for="inputAddress2" class="form-label" >Images</label>
+               <label ><input type="file" id="myFile" name="myFile" required></label>
+           </div><br>     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        <button type="submit" class="btn btn-primary">Save </button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+{% comment %} #####################################################----img upd model---################################################################################# {% endcomment %}
+
+{% for g in demo %}
+
+<!-- Modal -->
+<div class="modal fade" id="imgupdModal-{{forloop.counter}}" tabindex="-1" aria-labelledby="imgupdModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="imgupdModal">Modal title</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+          <form action="/chickImgupdate/{{g.id}}" method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+          <label for="inputAddress2" class="form-label" >Image Title</label>
+          <input type="text" name="text" id="text" value={{g.Title}} ></input><br><br><br>
+          <div class w=20>
+            <div class w="10" ="img">
+             <img src="{{g.image.url}}" class="card-img-top " alt="category image" style=" width: 100%; position: sticky;top: 0; "><br><br>
+             <label for="inputAddress2" class="form-label" >Images</label>
+                 <label ><input type="file" id="myFile" name="myFile"></label>
+             </div><br>     
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+          <button type="submit" class="btn btn-primary">Save </button>
+        </div>
+      </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock body  %}

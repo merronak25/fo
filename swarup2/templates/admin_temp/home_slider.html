@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block activate %}
+    class="menu-item active"
+{% endblock activate %}
+
+{% block body  %}
+
+<div class="container-lg">
+    <div class="table-responsive" style='overflow: hidden;'>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>HOME SLIDER</b></h2></div>
+                    <div class="col-sm-4">
+                        {% comment %} ======================= {% endcomment %}
+                        
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Add New
+                        </button>
+                          
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header" style='background-color:#3BB77E;'>
+                                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" method='post' enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                            <div class="form-group">
+                                            <label for="exampleInputName">Name <b class='fw-bold text-danger'>*</b> </label>
+                                            <input type="text" class="form-control" name='name' id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Category Name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputName">Status <b class='fw-bold text-danger'>*</b></label>
+                                                <input type="text" class="form-control" name='status' id="exampleInputstatus" aria-describedby="nameHelp" placeholder="Enter Category Name" required>
+                                            </div>
+    
+                                            <div class="form-group">
+                                                <label for="exampleInputName">Category Icon <b class='fw-bold text-danger'>*</b></label>
+                                                <input type="file" class="form-control" name='Icon' id="exampleInputicon" aria-describedby="nameHelp" placeholder="Enter Category Name" required>
+                                            </div>
+                                            <div class="form-group" hidden="hidden">
+                                                <label for="exampleInputName">Status <b class='fw-bold text-danger'>*</b></label>
+                                                <input type="text" style='display:block;' class="form-control hidden" name='iconpath' id="exampleIconfullpath" aria-describedby="nameHelp" placeholder="Enter Category Name" required>
+                                            </div>
+                                            
+                                            <button type="submit" class="btn" style='background-color:#3BB77E;' onclick="myFunction()">Submit</button>
+                                    </form>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>image name</th>
+
+                        <th>Images</th>
+                        {% comment %} <th>NAME</th> {% endcomment %}
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in datas %}
+                    <tr>
+                        <td scope="row" class="w-10 h-10">{{data.image_name}}
+                            </td>
+                         <td scope="row" class="w-10 h-10"> <img src="{{data.image_document.url}}" class="card-img-top "  alt="category image"
+                            style="height: 20%;
+                            width: 20%;
+                        }">
+                            </td>
+                           
+                        {% comment %} <th scope="row"></th> {% endcomment %}
+                        {% comment %} <td></td> {% endcomment %}
+                        <td><a href="/update_slider/{{ data.id }}"><data-bs-target="#imgupdModal" data-bs-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                          </svg></a>
+                        </td>
+                        <td><a href="/delete_slider/{{ data.id }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" >
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                          </svg></a></td>
+                        </td>
+                        
+                    </tr>
+                    
+                    
+                    {% endfor %}
+                    {% comment %} {%endfor%} {% endcomment %}
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>  
+{% endblock body  %}

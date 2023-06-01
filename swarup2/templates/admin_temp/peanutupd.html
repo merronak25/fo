@@ -1,0 +1,19 @@
+{% extends 'admin_temp/base.html' %}
+
+{% load static %}
+
+{% block body  %}
+<body>
+    
+    <form action=""  method="post">
+        <div align='center'>
+            {%csrf_token%}
+            {{form.media}}
+            {{form.as_p}}
+            <button type="button"  onclick="window.location='/peanuT/';" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Update</button> 
+        </div>
+        
+      </form> 
+</body>
+{% endblock body%}

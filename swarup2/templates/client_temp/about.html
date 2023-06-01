@@ -1,0 +1,192 @@
+  {%include 'client_temp/Header.html'%}
+  {%load static%}
+<style>
+    .best-ins-list li {
+        width: 100%;
+    }
+</style>
+{% comment %} <img src="{%static 'img/bg/page-tile.jpg'%}" class="d-block w-100%" width="100%" height="100% alt=""> {% endcomment %}
+
+<!-- page title start -->
+{%for y in demo%}
+<div class="page-title-area pt-50 pb-50" style="background-image:url({{y.image.url}})">
+    {%endfor%}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-title text-center mb-20">
+                    <h3 style="font-size: 20px;margin-left: 111px;">About SwarupGruhudhyog</h3>
+                    <img src="img/icon/line.png" alt="">
+                </div>
+                <div class="breadcrum-list">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">About SwarupGruhudhyog</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page title end -->
+
+<!-- portfolio-area start -->
+ <main class="page-content" >
+
+           
+            <div class="brook-about-area pattern-1 ptb--120 ptb-md--80 ptb-sm--60 " >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 "style="padding-right: 15px; padding-left: 15px; margin-left: 80px;">
+                            <div class="about-inner authenthick-about mt_md--40 mt_sm--40">
+                                
+                                {% comment %} <h3 class="heading heading-h3 line-height-1-25 about-title">about  &nbsp;<strong class="theme-color1">SwarupGruhUdhyog</strong></h3> {% endcomment %}
+                {% comment %} <div class="bkseparator--40"></div> {% endcomment %}
+                                {% comment %} <div class="title-separator w--100 color-red"></div> {% endcomment %}
+                                {% comment %} <div class="bkseparator--40"></div> {% endcomment %}
+                                {%for y in para %}
+                                    <p class="bk_pra mt-30 fw-600 text-justify ">{{y.text|safe}}</p>
+                                {%endfor%}
+
+                                {% comment %} {%for y in about_content %}
+                                    <p class="bk_pra mt-30 text-justify">{{y.paragraph_Text}}</p>
+                                {%endfor%} {% endcomment %}
+
+                                {% comment %} <p class="bk_pra mt-30 fw-400 text-justify">We have been buying the best peanuts and chickpeas with proper care from farmers for many generations, because the better the peanuts and chickpeas, the roasted peanuts and roasted chana the better. Just as the foundation of a house needs to be strong when it comes to construction, in the same way, we also make carefully roasted peanuts and roasted chana for the right and delicious roasted peanuts and roasted chana by taking full care of everything from its base. We cover and consider everything from peanut and chickpea production to its flavor. We try to serve fresh and nutritious peanuts and chickpeas. Peanuts and chickpeas are the life of the people of Gujarat. Those people eat roasted peanuts and roasted chana in large quantities. Many people also eat peanuts or chickpeas in the morning, when people have lunch they eat peanuts or chickpeas, besides, many people eat chickpeas or peanuts even after dinner, so keeping this in mind we make roasted peanuts and roasted chana. We buy the right and best peanuts and chickpeas to make roasted peanuts and roasted chana of the right quality as well as delicious. As a buyer, it is very important to have proper and strong knowledge of crop and other quality criteria to make a purchase. By introducing new technologies to the company and educating farmers to classify the best quality of crops, by enabling them to get fair prices, they became one of the respected buyers of groundnuts, Which in turn, the company inherited strong ethical standards and fair business is a component of the strategy.
+</p>
+                                <p class="bk_pra mt-30 fw-400 text-justify">At SwarupGruhUdhyog, we mainly like traditional food and we are always looking for ways to make traditional food better. It is with this in mind that we launched our Roasted peanuts and roasted chickpea, where we from peanut and chickpea production to premium quality peanuts and chickpea with the right and best taste buds to stimulate transformed into an alternative snack by mixing it with natural spices. Since then we will always launch tremendous, fantastic, delicious, and better products following the taste that suits the customers according to the quality. We have been growing steadily since our company was founded, and we have always chang as well as we have received a lot of inspiration from our customers and we are proud that we have made the right thing considering all the aspects. What our company or we is today is from our customers, and we are committed to serving them with quality, and consistency for a long time.
+</p> {% endcomment %}
+                                {% comment %} {%for i in get_title%}
+                                <h3 class="heading heading-h3 line-height-1-25 about-title">{{i.paragraph_Text}}  &nbsp;</h3>
+                                {%endfor%} {% endcomment %}
+                                {% comment %} <p class="bk_pra mt-30 fw-400 text-justify">Peanuts decrease cholesterol, which protects against heart disease {% endcomment %}
+&nbsp;</p>
+                                 
+                                {% comment %} <ul class="best-ins-list">
+                                {%for x in Item_list%}
+                                    <li>{{x.paragraph_Text}}</li>
+                                {%endfor%} {% endcomment %}
+                                    {% comment %} <li>It can reduce weight.</li>
+                                    <li>Peanuts are a low-glycemic food, meaning that eating them does not raise blood sugar levels, and it can lower the risk of diabetes.</li>
+                                    <li>Peanuts are a good source of fiber, which helps reduce inflammation in your body.</li>  
+                                    <li>It also helps the digestive system.</li>
+                                    <li>Peanuts contain protein, about 23% to 29% of calories come from perfect protei.</li>
+                                    <li>Roasted peanuts are high in heart-healthy nutrients.</li>
+                                    <li>Biotin, important during pregnancy.</li>
+                                    <li>Peanuts are right for vitamin E.</li>
+                                    <li>Folate [B9-folic acid], is important during pregnancy and improves hemoglobin level or proportion.</li> {% endcomment %}
+                                </ul>
+                                {% comment %} <div class="bkseparator--45"></div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bk-blog-grid-area ptb--100 ptb-md--80 ptb-sm--60 bg-gray"style=" padding-left: 38px;width: 104%;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            
+                        </div>
+                    </div>
+                    {% comment %} <div class="row mt--20"> {% endcomment %}
+                       
+                        <div class="col-lg-12 col-md-6 col-sm-6 col-12 move-up wow mt--40">
+                            <div class="brook-section-title">
+                                <h3 class="font-large mv-title">Mission & Vision</h3>
+                                <div class="bkseparator--10"></div>
+                                <div class="title-separator w--40 color-red"></div>
+                            </div>
+                        </div>
+                     
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 move-up wow mt--40">
+                            <div class="single-contagion mb--30">
+                                    <div class="contagion-image">
+                                        <img src="{%static 'client_temp/img/bg/mission.png'%}" alt="mission">
+                                    </div>
+                                    <div class="contagion-content mt-30">
+                                        
+                                        <h3 class="title mv-sub-title">Mission</h3>
+                                        <p class="mv-des font-italic text-justify">The most important thing is the customer, their satisfaction with their cheerful smile is leading us so that they do not feel disappointed and they are everything for us, that thing is foremost for us company or us. </p>
+                                    </div>
+                                </div>
+                        </div>
+                       
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 move-up wow mt--40">
+                            <div class="single-contagion mb--30">
+                                    <div class="contagion-image">
+                                        <img src="{%static 'client_temp/img/bg/vision.png'%}" alt="mission">
+                                    </div>
+                                    <div class="contagion-content mt-30">
+                                        <h3 class="title mv-sub-title">Vission</h3>
+                                        <p class="mv-des font-italic text-justify">We believe that fresh peanuts and fresh chickpeas are the best peanuts and chickpeas so if peanuts and chickpeas are good then roasted peanuts and roasted chana will be good so we keep looking for what to do always to sell the most delicious peanuts and chickpeas.
+</p>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                * {
+                  box-sizing: border-box;
+                }
+                
+                /* Create three equal columns that floats next to each other */
+                .column {
+                  float: right;
+                  width: 33.33%;
+                  padding: 25px;
+                  height: 400px; /* Should be removed. Only for demonstration */
+                  
+                }
+                .p {
+                  font-color: black;
+                   }
+                /* Clear floats after the columns */
+                .row:after {
+                  content: "";
+                  display: table;
+                  clear: both;
+                  ;
+                }
+            </style>
+
+            <div class="row">
+                <div class="column" style="background-color:#097DFF; ">
+                  <h2>Who We Are?</h2>
+                  <p style="color:#ffffff">SwarupGruhUdhyog was founded in line with our traditional food preferences and suits customers as well Customers' clean label, perfect, healthy, qualitative, nutritious, and guilt-free snack option was born out of a desire to create.</p>
+                </div>
+                <div class="column" style="background-color:#712cf0;">
+                  <h2>What We Believe?</h2>
+                  <p  style="color:#ffffff" >Whenever people eat fresh, nutritious food for breakfast, the day is good and the day starts well, that is why we believe that fresh, whole foods, nutritious and natural ingredients are always the best choice for breakfast. Breakfast should be as delicious as it is nutritious.</p>
+                </div>
+                <div class="column" style="background-color:#ED7A14;">
+                  <h2>Product Innovation</h2>
+                  <p  style="color:#ffffff">We are always looking for something new, and in search of healthy snacks in it, we play with different ingredients in SwarupGruhUdhyog Center. We strive to make tasty and healthy food according to people's needs with constant passion also, we always keep up with the market and adopt new soon.</p>
+                </div>
+            </div>
+<!-- portfolio-area end -->
+
+<!-- cta-area start -->
+<!-- <div class="cta-area bg-cover pt-90 pb-90" style="background-image:url(img/bg/cta-bg-gray.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="cta-middle text-center">
+                    <h2 class="cta-color-black">+91 7096 70 9000</h2>
+                    <h1>we always with you</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- cta-area end -->
+
+{%include 'client_temp/footer.html'%}
